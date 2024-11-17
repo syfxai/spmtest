@@ -1,0 +1,1071 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --nav-height: 140px;
+}
+
+.content-wrapper {
+    padding-top: var(--nav-height); /* Match your header height */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f7f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    padding-top: 0; /* Remove the padding from main */
+    flex: 1 0 auto;
+}
+
+/* Update scroll behavior */
+html {
+    scroll-padding-top: var(--nav-height);
+}
+
+/* Ensure proper spacing */
+.featured-section {
+    padding: 4rem 2rem;
+    margin-top: 2rem;
+}
+
+/* Navigation styles */
+.navbar {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: var(--nav-height);
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.nav-brand-main {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #112d4e;
+}
+
+.nav-brand-sub {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #205796;
+    margin-top: 0.2rem;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.nav-item {
+    position: relative;
+    margin: 0 1.75rem;
+}
+
+.nav-link {
+    color: #3f72af;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: #112d4e;
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    color: #3f72af;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    color: #112d4e;
+}
+
+/* Featured section */
+.featured-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f7f7;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #112d4e;
+    margin-bottom: 0.5rem;
+}
+
+/* Slider Section */
+.slider-section {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    padding: 2rem;
+    margin-top: 0;
+    padding-top: 2rem;
+    scroll-margin-top: var(--nav-height);
+}
+
+.slider-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slider {
+    overflow: hidden;
+    position: relative;
+    height: 500px;
+    margin-top: 0.5rem;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Counter Box Styles */
+.counter-box {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    width: 750px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(63, 114, 175, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Specific styles for first counter box (Suluk) */
+.counter-box-1 {
+    padding: 2.5rem 2rem;
+    min-height: 420px;
+    justify-content: space-between;
+}
+
+.counter-box-1 .countdown-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.counter-box-1 .countdown-days {
+    font-size: 4rem;
+    margin: 1rem 0;
+}
+
+.counter-box-1 .countdown-time {
+    font-size: 2rem;
+    color: #3f72af;
+    margin: 1rem 0;
+}
+
+.counter-box-1 .countdown-date,
+.counter-box-1 .countdown-hijri {
+    font-size: 1.2rem;
+    color: #112d4e;
+    margin: 0.5rem 0;
+}
+
+/* Specific styles for second counter box (Perjumpaan Bulanan) */
+.counter-box-2 {
+    padding: 2.5rem 2rem;
+    min-height: 420px;
+    justify-content: space-around;
+}
+
+.counter-box-2 .countdown-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.counter-box-2 .countdown-days {
+    font-size: 4rem;
+    margin: 2rem 0;
+}
+
+/* Specific styles for third counter box (Sumbangan) */
+.counter-box-3 {
+    padding: 2.5rem 2rem;
+    min-height: 420px;
+    justify-content: space-between;
+}
+
+.counter-box-3 .countdown-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.counter-box-3 .organization-name {
+    font-size: 1.2rem;
+    color: #112d4e;
+    margin: 1.5rem 0;
+}
+
+.counter-box-3 .bank-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    font-size: 2rem;
+    color: #3f72af;
+    font-weight: bold;
+}
+
+.counter-box-3 .bank-logo {
+    width: 96px;
+    height: 72px;
+}
+
+.counter-box-3 .contact-info {
+    font-size: 1.1rem;
+    color: #112d4e;
+    margin: 1.5rem 0;
+}
+
+.countdown-title {
+    font-size: 1.5rem;
+    color: #112d4e;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.countdown-days {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #3f72af;
+    margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(63, 114, 175, 0.2);
+}
+
+.countdown-time {
+    font-size: 2rem;
+    color: #3f72af;
+    margin-bottom: 1.5rem;
+}
+
+.countdown-date, .countdown-hijri {
+    font-size: 1.25rem;
+    color: #112d4e;
+    margin: 0.5rem 0;
+}
+
+.counter-btn, .hubungi-btn {
+    background: #3f72af;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Push button to bottom */
+    align-self: center; /* Center horizontally */
+    text-decoration: none !important;
+    width: fit-content;
+}
+
+.counter-btn:hover, .hubungi-btn:hover {
+    background: #112d4e;
+    text-decoration: none !important;
+}
+
+/* Slider Navigation */
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.slider-dots {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background: #3f72af;
+}
+
+.prev, .next {
+    background: #3f72af;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.slider:hover .prev,
+.slider:hover .next {
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    background-color: #112d4e;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Mobile Navigation Styles */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #112d4e;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.organization-name {
+    font-size: 1.2rem;
+    color: #112d4e;
+    margin: 1rem 0;
+    font-weight: 500;
+}
+
+.bank-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.bank-logo {
+    width: 96px;
+    height: 72px;
+}
+
+.account-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3f72af;
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    color: #112d4e;
+    margin: 1.5rem 0;
+}
+
+.counter-box {
+    padding: 2rem;
+    background: #ffffff;
+    position: relative;
+    isolation: isolate;
+}
+
+/* Add loading state to share button */
+.counter-btn.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.counter-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.2em;
+    height: 1.2em;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 0.6s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Syarah Mursyid Styles */
+.syarah-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.syarah-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.syarah-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.syarah-header h2 {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.decorative-line {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    margin: 0 auto;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.syarah-header:hover .decorative-line {
+    width: 150px;
+}
+
+.syarah-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.syarah-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.syarah-card.animate-on-scroll {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.syarah-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-number {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-content h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.amalan-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.amalan-type h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary-color);
+}
+
+.amalan-list {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.amalan-list li {
+    position: relative;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    padding-left: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.amalan-list li:hover {
+    transform: translateX(5px);
+}
+
+.amalan-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.amalan-list.secondary li::before {
+    color: var(--secondary-color);
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: 0 0.2rem;
+}
+
+.syarah-footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    position: relative;
+}
+
+.syarah-footer .decorative-line {
+    width: 50px;
+    margin-bottom: 1rem;
+}
+
+.footer-note {
+    font-style: italic;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .syarah-section {
+        padding: 4rem 1rem;
+    }
+
+    .syarah-header h2 {
+        font-size: 2rem;
+    }
+
+    .syarah-card {
+        padding: 1.5rem;
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .card-number {
+        margin-bottom: 1rem;
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .amalan-group {
+        gap: 1.5rem;
+    }
+
+    .amalan-type h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .syarah-section {
+        background: white;
+        padding: 1rem;
+    }
+
+    .syarah-section::before {
+        display: none;
+    }
+
+    .syarah-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* Animation delay for cards */
+.syarah-card:nth-child(1) { animation-delay: 0.1s; }
+.syarah-card:nth-child(2) { animation-delay: 0.3s; }
+.syarah-card:nth-child(3) { animation-delay: 0.5s; }
+.syarah-card:nth-child(4) { animation-delay: 0.7s; }
+
+.faq-section {
+    padding: 4rem 0 8rem 0;  /* Increased bottom padding */
+    background: #f8f9fa;     /* Lighter background */
+    position: relative;
+    min-height: 100vh;       /* Ensures full height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.faq-header h2 {
+    color: #002B4D;          /* Darker blue for better contrast */
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.faq-content {
+    width: 100%;
+    max-width: 900px;        /* Increased max-width */
+    margin: 0 auto;
+    padding: 0 1rem;         /* Added horizontal padding */
+}
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-toggle {
+    display: none;
+}
+
+.faq-question {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;    /* Increased padding */
+    cursor: pointer;
+    font-weight: 500;
+    color: #002B4D;          /* Matched heading color */
+    transition: all 0.3s ease;
+}
+
+/* Plus icon styles */
+.faq-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-left: 1rem;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #3f72af;
+    border-radius: 1px;
+}
+
+.faq-icon::before {
+    width: 2px;
+    height: 20px;
+    left: 9px;
+    top: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-icon::after {
+    width: 20px;
+    height: 2px;
+    left: 0;
+    top: 9px;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #ffffff;
+    padding: 0 2rem;         /* Match question padding */
+}
+
+.faq-answer p {
+    margin: 0;
+    padding: 1.5rem 0;      /* Equal padding top and bottom */
+    color: #4a5568;
+    line-height: 1.6;
+    width: 100%;            /* Full width */
+    text-align: left;       /* Left align text */
+}
+
+/* Active states */
+.faq-toggle:checked + .faq-question {
+    background-color: #f8f9fa;
+}
+
+.faq-toggle:checked + .faq-question .faq-icon::before {
+    transform: rotate(90deg);
+}
+
+.faq-toggle:checked + .faq-question + .faq-answer {
+    max-height: 500px;
+}
+
+/* Hover states */
+.faq-question:hover {
+    background-color: #f8f9fa;
+}
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    :root {
+        --nav-height: 160px;
+    }
+
+    .navbar {
+        height: auto;
+        min-height: var(--nav-height);
+    }
+
+    .nav-brand {
+        margin-right: 3rem;
+    }
+
+    .nav-brand-main {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .nav-brand-sub {
+        font-size: 1.1rem;
+    }
+    
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dropdown-menu a {
+        padding: 0.75rem 2rem;
+        background-color: #f8f9fa;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .counter-box {
+        width: 90%;
+        min-height: 350px;
+    }
+
+    .counter-box-1,
+    .counter-box-2,
+    .counter-box-3 {
+        padding: 2rem 1.5rem;
+    }
+
+    .counter-box-1 .countdown-title,
+    .counter-box-2 .countdown-title,
+    .counter-box-3 .countdown-title {
+        font-size: 1.2rem;
+    }
+
+    .counter-box-1 .countdown-days,
+    .counter-box-2 .countdown-days {
+        font-size: 3rem;
+    }
+
+    .counter-box-1 .countdown-time {
+        font-size: 1.5rem;
+    }
+
+    .counter-box-1 .countdown-date,
+    .counter-box-1 .countdown-hijri {
+        font-size: 1rem;
+    }
+
+    .counter-box-3 .organization-name {
+        font-size: 1rem;
+    }
+
+    .counter-box-3 .bank-info {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .counter-box-3 .bank-logo {
+        width: 64px;
+        height: 48px;;
+    }
+
+    .counter-box-3 .contact-info {
+        font-size: 0.9rem;
+    }
+
+    .countdown-title {
+        font-size: 1.2rem;
+    }
+
+    .countdown-days {
+        font-size: 3rem;
+    }
+
+    .countdown-time {
+        font-size: 1.5rem;
+    }
+
+    .countdown-date, .countdown-hijri {
+        font-size: 1rem;
+    }
+    
+    .counter-btn, .hubungi-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .organization-name {
+        font-size: 1rem;
+    }
+
+    .bank-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .account-number {
+        font-size: 1.5rem;
+    }
+
+    .contact-info {
+        font-size: 0.9rem;
+    }
+
+    .bank-logo {
+        width: 64px;
+        height: 48px;
+    }
+
+    .faq-section {
+        padding: 2rem 0 4rem 0;
+    }
+
+    .faq-header h2 {
+        font-size: 1.75rem;
+        padding: 0 1rem;
+    }
+
+    .faq-question {
+        padding: 1.25rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .faq-answer {
+        padding: 0 1.5rem;
+    }
+}
